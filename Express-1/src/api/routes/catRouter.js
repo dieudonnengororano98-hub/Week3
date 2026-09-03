@@ -19,3 +19,4 @@ catRouter.route('/:id')
   .delete(deleteCat);
 
 export default catRouter;
+
