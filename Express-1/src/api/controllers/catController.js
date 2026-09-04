@@ -19,11 +19,19 @@ const getCatById = (req, res) => {
   res.json(cat);
 };
 
-const createCat = (req, res) => {
-  const { name, weight } = req.body;
-  const newCat = addCatToModel({ name, weight });
+const createCat = (req, res) =>{
+  console.log(req,body);
+  console.log(req.file);
+  const {name, weight} = req.body;
+
+  const newCat = addCatToModel({
+    name,
+    weight,
+    filename: req.file.filename
+  })
   res.status(201).json(newCat);
 };
+
 
 const updateCat = (req, res) => {
   res.json({ message: 'Cat item updated.' });
